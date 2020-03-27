@@ -1,4 +1,4 @@
-# flutterui
+# Google Flutter UI Challenges
 
 A Flutter UI examples.
 
@@ -12,4 +12,4 @@ For more articles and tutorials:
 - [Video Tutorials: HyperionApps Youtube Channel](https://www.youtube.com/channel/UC8feBTGKYLaXMTOC0O30RXA)
 - [Video Tutorials: Arabic Channel Youtube Channel](https://www.youtube.com/channel/UCOpuLcVZXl8C642cJVAC0VA)
 
-For help with your projects and hire our services email us on [email](mailto:ahmad@hyperionstudios.com.au)
+For help with your projects and hire our services email us on [Our Email](mailto:ahmad@hyperionstudios.com.au)
