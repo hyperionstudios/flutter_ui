@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterui/chat/chat1/chat_list.dart';
+import 'package:flutterui/chat/chat1/message_provider.dart';
+import 'package:flutterui/chat/chat2/chat_screen.dart';
 import 'package:flutterui/profiles/profile4/profile4.dart';
 import 'package:flutterui/profiles/profile5/profile5.dart';
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ChatList(),
+      home: ChatScreen2( MessageProvider.getConversation() , 'Ahmad Alsodani' ),
     );
   }
 }
