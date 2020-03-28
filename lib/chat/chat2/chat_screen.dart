@@ -271,10 +271,11 @@ class _ChatScreen2State extends State<ChatScreen2> {
                       color: Colors.white,
                     )),
                 border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(50)),
-                    borderSide: BorderSide(
-                      color: Colors.white,
-                    )),
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                  borderSide: BorderSide(
+                    color: Colors.white,
+                  ),
+                ),
                 focusColor: Colors.white,
                 fillColor: Colors.white,
                 filled: true,
@@ -295,7 +296,7 @@ class _ChatScreen2State extends State<ChatScreen2> {
                       shape: BoxShape.circle,
                     ),
                     child: Transform.translate(
-                      offset: Offset( -1 , 0 ),
+                      offset: Offset(-1, 0),
                       child: Icon(
                         FontAwesomeIcons.paperPlane,
                         size: 16,
