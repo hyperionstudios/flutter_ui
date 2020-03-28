@@ -11,6 +11,22 @@ class Profile2 extends StatefulWidget {
 class _Profile2State extends State<Profile2> {
   Profile _profile = ProfileProvider.getProfile();
   static Color _textColor = Color(0xFF4e4e4e);
+  bool _visible = false;
+  bool _visible2 = false;
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(milliseconds: 500) , (){
+      setState(() {
+        _visible = true;
+      });
+    }).then((value){
+      setState(() {
+        _visible2 = true;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,14 +93,18 @@ class _Profile2State extends State<Profile2> {
               ),
               Align(
                 alignment: Alignment.center,
-                child: Container(
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: ExactAssetImage('assets/shared/ahmad.png'),
-                      fit: BoxFit.cover,
+                child: AnimatedOpacity(
+                  opacity: _visible ? 1 : 0,
+                  duration: Duration(milliseconds: 300),
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: ExactAssetImage('assets/shared/ahmad.png'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
@@ -151,55 +171,59 @@ class _Profile2State extends State<Profile2> {
   Widget _counters(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Column(
-            children: <Widget>[
-              Text(
-                'FOLLOWERS',
-                style: _bottomBarTitle,
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Text(
-                _profile.followers.toString(),
-                style: _bottomBarCounter,
-              ),
-            ],
-          ),
-          Column(
-            children: <Widget>[
-              Text(
-                'FOLLOWING',
-                style: _bottomBarTitle,
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Text(
-                _profile.following.toString(),
-                style: _bottomBarCounter,
-              ),
-            ],
-          ),
-          Column(
-            children: <Widget>[
-              Text(
-                'FRIENDS',
-                style: _bottomBarTitle,
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Text(
-                _profile.friends.toString(),
-                style: _bottomBarCounter,
-              ),
-            ],
-          ),
-        ],
+      child: AnimatedOpacity(
+        duration: Duration(milliseconds: 500),
+        opacity: _visible2 ? 1 : 0,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Column(
+              children: <Widget>[
+                Text(
+                  'FOLLOWERS',
+                  style: _bottomBarTitle,
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  _profile.followers.toString(),
+                  style: _bottomBarCounter,
+                ),
+              ],
+            ),
+            Column(
+              children: <Widget>[
+                Text(
+                  'FOLLOWING',
+                  style: _bottomBarTitle,
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  _profile.following.toString(),
+                  style: _bottomBarCounter,
+                ),
+              ],
+            ),
+            Column(
+              children: <Widget>[
+                Text(
+                  'FRIENDS',
+                  style: _bottomBarTitle,
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  _profile.friends.toString(),
+                  style: _bottomBarCounter,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
