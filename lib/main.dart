@@ -5,6 +5,7 @@ import 'package:flutterui/chat/chat2/chat_screen.dart';
 import 'package:flutterui/profiles/profile4/profile4.dart';
 import 'package:flutterui/profiles/profile5/profile5.dart';
 import 'package:flutterui/registration/registration1.dart';
+import 'package:flutterui/registration/registration2.dart';
 
 import 'profiles/profile1/profile_1.dart';
 import 'profiles/profile2/profile2.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Registration1(),
+      home: Registration2(),
     );
   }
 }

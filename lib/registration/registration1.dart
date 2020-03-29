@@ -47,9 +47,10 @@ class _Registration1State extends State<Registration1> {
                     'Welcome back!',
                     style: TextStyle(
                       letterSpacing: 1.3,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 32),
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 32,
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -92,7 +93,9 @@ class _Registration1State extends State<Registration1> {
                     ),
                   ],
                 ),
-                SizedBox(height: 48,),
+                SizedBox(
+                  height: 48,
+                ),
               ],
             ),
           ),
